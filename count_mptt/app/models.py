@@ -15,5 +15,5 @@ class Topic(MPTTModel):
     count = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
-        return f'{self.name}[type={self.type}]'
+        return f'{self.name}[type={self.type},count={self.count}]'
 
