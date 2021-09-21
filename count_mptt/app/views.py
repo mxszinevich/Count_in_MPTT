@@ -16,14 +16,14 @@ class TopicsView(APIView):
         return Response(representation.data)
 
     def count_child_easy(self, topics):
+
         for topic in topics:
-            if topic.type == 1: # условие
+            if topic.type == 1:  # условие
                 self.count += 1
-            if topic.parent == None:
+            if topic.parent is None:
                 children = topic.get_children()
                 self.count_child_easy(children)
                 topic.count = self.count
-                self.count = 0
             else:
                 if topic.get_descendant_count() != 0:
                     children = topic.get_children()

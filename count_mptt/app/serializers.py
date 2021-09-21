@@ -5,4 +5,4 @@ from .models import Topic
 class TopicSerializer(serializers.ModelSerializer):
     class Meta:
         model = Topic
-        fields = ('id', 'name', 'count')
+        fields = ('__all__')
